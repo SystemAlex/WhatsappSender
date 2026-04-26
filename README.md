@@ -216,7 +216,7 @@ Luego carga la carpeta `dist/` en `chrome://extensions/` con el Modo de Desarrol
 
 ## 📝 Licencia
 
-Este proyecto está disponible bajo licencia MIT.
+Este proyecto está disponible bajo [licencia MIT](LICENSE).
 
 ## 🤝 Contribuciones
 
