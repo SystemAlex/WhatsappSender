@@ -1,4 +1,4 @@
-# WhatsApp Sender
+# <img src="icons/WhatsappSender.svg" alt="WhatsApp Sender Icon" width="32" height="32"> WhatsApp Sender
 
 Extensión de navegador para Chrome y navegadores basados en Chromium que facilita la gestión y envío de mensajes por WhatsApp de forma eficiente y controlada.
 
@@ -147,12 +147,11 @@ Esta herramienta debe usarse ÚNICAMENTE para:
 
 ### Para Usuarios Finales
 
-1. Descarga el archivo compilado de la extensión (`.crx` o carpeta sin empaquetar)
+1. Descarga `WhatsappSender.zip` desde [Releases](https://github.com/yourusername/WhatsappSender/releases)
 2. Abre tu navegador basado en Chrome y ve a `chrome://extensions/`
 3. Activa el **"Modo de desarrollador"** en la esquina superior derecha
-4. Opción A: Arrastra y suelta el archivo `.crx`
-5. Opción B: Haz clic en **"Cargar extensión sin empaquetar"** y selecciona la carpeta `dist/`
-6. ¡La extensión está lista para usar!
+4. Arrastra y suelta el archivo `WhatsappSender.zip` en la ventana de extensiones
+5. ¡La extensión está lista para usar!
 
 ### Para Desarrolladores
 
@@ -161,7 +160,7 @@ Para instrucciones detalladas sobre cómo configurar el entorno, compilar la ext
 Aquí está el resumen rápido:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/yourusername/WhatsappSender.git
 cd WhatsappSender
 pnpm install
 pnpm dev
