@@ -9,7 +9,7 @@ Extensión de navegador para Chrome y navegadores basados en Chromium que facili
 ## 📚 Documentación Adicional
 
 - **[CHANGELOG.md](CHANGELOG.md)** - Historial de cambios y actualizaciones
-- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Guía para contribuyentes
+- **[CONTRIBUTING.md](https://github.com/SystemAlex/WhatsappSender?tab=contributing-ov-file)** - Guía para contribuyentes
 
 ## 📋 Descripción
 
@@ -155,7 +155,7 @@ Esta herramienta debe usarse ÚNICAMENTE para:
 
 ### Para Desarrolladores
 
-Para instrucciones detalladas sobre cómo configurar el entorno, compilar la extensión y ejecutar en modo desarrollo, consulta la sección **"3. Enviar Pull Requests"** en [CONTRIBUTING.md](CONTRIBUTING.md).
+Para instrucciones detalladas sobre cómo configurar el entorno, compilar la extensión y ejecutar en modo desarrollo, consulta la sección **"3. Enviar Pull Requests"** en [CONTRIBUTING.md](https://github.com/SystemAlex/WhatsappSender?tab=contributing-ov-file).
 
 Aquí está el resumen rápido:
 
@@ -216,11 +216,11 @@ Luego carga la carpeta `dist/` en `chrome://extensions/` con el Modo de Desarrol
 
 ## 📝 Licencia
 
-Este proyecto está disponible bajo [licencia MIT](LICENSE).
+Este proyecto está disponible bajo [licencia MIT](https://github.com/SystemAlex/WhatsappSender?tab=MIT-1-ov-file).
 
 ## 🤝 Contribuciones
 
-Las contribuciones son bienvenidas. Por favor, lee [CONTRIBUTING.md](CONTRIBUTING.md) para ver las directrices completas sobre:
+Las contribuciones son bienvenidas. Por favor, lee [CONTRIBUTING.md](https://github.com/SystemAlex/WhatsappSender?tab=contributing-ov-file) para ver las directrices completas sobre:
 
 - Cómo reportar errores
 - Proponer características nuevas
@@ -232,7 +232,7 @@ Las contribuciones son bienvenidas. Por favor, lee [CONTRIBUTING.md](CONTRIBUTIN
 
 Para reportar problemas, sugerencias o preguntas sobre el desarrollo, abre un issue en el [repositorio](https://github.com/SystemAlex/WhatsappSender/issues).
 
-Consulta [CONTRIBUTING.md](CONTRIBUTING.md) para obtener instrucciones detalladas sobre cómo reportar errores o proponer características nuevas.
+Consulta [CONTRIBUTING.md](https://github.com/SystemAlex/WhatsappSender?tab=contributing-ov-file) para obtener instrucciones detalladas sobre cómo reportar errores o proponer características nuevas.
 
 ## 👨‍💼 Autor
 
