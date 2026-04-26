@@ -279,12 +279,12 @@ R: Para evitar detección por WhatsApp, recomendamos enviar máximo 30-40 mensaj
 
 | Campo                     | Valor                                       |
 | ------------------------- | ------------------------------------------- |
-| **Versión Actual**        | 1.0.54                                      |
+| **Versión Actual**        | 1.1.0                                       |
 | **Versión Mínima Chrome** | 88+                                         |
 | **Estado del Proyecto**   | Activo ✅                                   |
 | **Licencia**              | MIT                                         |
 | **Lenguaje**              | Español (ES)                                |
-| **Última Actualización**  | Abril 2026                                  |
+| **Última Actualización**  | 26 de Abril de 2026                         |
 | **Desarrollador**         | [SystemAlex](https://github.com/SystemAlex) |
 
 ### ⚠️ **Por favor, lee completamente las advertencias antes de usar esta extensión.**

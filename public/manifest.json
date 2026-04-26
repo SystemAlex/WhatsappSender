@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "WhatsApp Sender",
-  "version": "1.0.54",
+  "version": "1.1.0",
   "description": "Puente de automatización para envío secuencial de WhatsApp.",
   "author": "SystemAlex",
   "homepage_url": "https://github.com/SystemAlex/WhatsappSender",

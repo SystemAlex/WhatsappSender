@@ -7,7 +7,10 @@ chrome.action.onClicked.addListener(() => {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === "OPEN_WHATSAPP") {
     if (sender.tab) {
-      chrome.storage.local.set({ appTabId: sender.tab.id });
+      chrome.storage.local.set({
+        appTabId: sender.tab.id,
+        hasAttachment: request.hasAttachment,
+      });
     }
 
     chrome.tabs.query({ url: "*://web.whatsapp.com/*" }, (tabs) => {
@@ -25,7 +28,10 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       if (data.appTabId) {
         chrome.tabs.update(data.appTabId, { active: true }, () => {
           setTimeout(() => {
-            chrome.tabs.sendMessage(data.appTabId, { type: "NEXT_STEP" });
+            chrome.tabs.sendMessage(data.appTabId, {
+              type: "NEXT_STEP",
+              error: request.error,
+            });
           }, 500);
         });
       }

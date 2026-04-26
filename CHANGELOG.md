@@ -2,6 +2,28 @@
 
 Todos los cambios notables a este proyecto se documentarán en este archivo.
 
+## [1.1.0] - 2026-04-26
+
+### Agregado
+
+- Nuevos componentes React:
+  - `ContactFormDialog`: Diálogo para agregar/editar contactos con validación de números
+  - `ExtensionStatus`: Indicador de estado de la extensión y conexión del bridge
+  - `InstructionalGuide`: Guía interactiva de uso rápido con collapse en móvil
+  - `ProcessingStatus`: Indicador visual del estado de procesamiento y countdown
+- Nuevo hook `useWhatsAppBridge`: Gestión de comunicación con WhatsApp Web y procesamiento automático
+- Nuevo hook `useWhatsAppState`: Gestión centralizada de estado (mensajes, contactos, adjuntos)
+- Nuevos assets de iconos en múltiples formatos (PNG, WEBP, SVG)
+- Favicon en 512x512 para web app manifest
+
+### Mejorado
+
+- Arquitectura de componentes más modular
+- Mejor separación de responsabilidades con hooks personalizados
+- Mejora en experiencia de usuario con indicadores visuales
+- Gestión de estado con localStorage e IndexedDB
+- Soporte para Chrome Runtime API y comunicación con extensión
+
 ## [1.0.54] - 2026-04-25
 
 ### Agregado
