@@ -1,10 +1,10 @@
-# Política de Privacidad - WhatsApp Sender
+# Política de Privacidad - WhatsAppSender
 
 **Última actualización:** 26 de abril de 2026
 
 ## 1. Introducción
 
-WhatsApp Sender ("la Extensión") es una extensión de navegador que facilita la gestión de contactos y el envío de mensajes a través de WhatsApp Web. Esta Política de Privacidad explica cómo recopilamos, usamos, protegemos y divulgamos la información personal del usuario.
+WhatsAppSender ("la Extensión") es una extensión de navegador que facilita la gestión de contactos y el envío de mensajes a través de WhatsApp Web. Esta Política de Privacidad explica cómo recopilamos, usamos, protegemos y divulgamos la información personal del usuario.
 
 ## 2. Información que Recopilamos
 
@@ -118,7 +118,7 @@ Para preguntas sobre esta Política de Privacidad, por favor contacta a través 
 
 ## 11. Consentimiento
 
-Al usar WhatsApp Sender, aceptas esta Política de Privacidad en su totalidad.
+Al usar WhatsAppSender, aceptas esta Política de Privacidad en su totalidad.
 
 ## 12. Cumplimiento con Regulaciones
 

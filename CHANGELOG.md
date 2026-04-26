@@ -59,7 +59,7 @@ Todos los cambios notables a este proyecto se documentarán en este archivo.
 
 ### Agregado
 
-- Versión inicial de WhatsApp Sender
+- Versión inicial de WhatsAppSender
 - Funcionalidad básica de envío de mensajes
 - Gestión de contactos
 - Integración con WhatsApp Web
@@ -71,7 +71,7 @@ Todos los cambios notables a este proyecto se documentarán en este archivo.
 ### Cómo Actualizar
 
 1. Ve a `chrome://extensions/`
-2. Busca "WhatsApp Sender"
+2. Busca "WhatsAppSender"
 3. La extensión se actualizará automáticamente si tienes habilitadas las actualizaciones automáticas
 4. Si quieres actualizar manualmente, descarga la última versión y carga la carpeta `dist/`
 

@@ -1,4 +1,4 @@
-# <img src="icons/WhatsappSender.svg" alt="WhatsApp Sender Icon" width="32" height="32"> WhatsApp Sender
+# <img src="icons/WhatsappSender.svg" alt="WhatsAppSender Icon" width="32" height="32"> WhatsAppSender
 
 Extensión de navegador para Chrome y navegadores basados en Chromium que facilita la gestión y envío de mensajes por WhatsApp de forma eficiente y controlada.
 
@@ -13,7 +13,7 @@ Extensión de navegador para Chrome y navegadores basados en Chromium que facili
 
 ## 📋 Descripción
 
-WhatsApp Sender es una extensión de navegador diseñada para facilitar la gestión de contactos y el envío de mensajes mediante WhatsApp Web. Proporciona una interfaz intuitiva y fácil de usar directamente en tu navegador para organizar contactos y comunicarte de manera más efectiva.
+WhatsAppSender es una extensión de navegador diseñada para facilitar la gestión de contactos y el envío de mensajes mediante WhatsApp Web. Proporciona una interfaz intuitiva y fácil de usar directamente en tu navegador para organizar contactos y comunicarte de manera más efectiva.
 
 ### 🌐 Compatibilidad
 
@@ -175,7 +175,7 @@ Luego carga la carpeta `dist/` en `chrome://extensions/` con el Modo de Desarrol
 1. Instala la extensión en tu navegador Chrome
 2. Ve a [WhatsApp Web](https://web.whatsapp.com) e inicia sesión con tu teléfono
 3. Haz clic en el icono de la extensión en la barra de herramientas del navegador
-4. Se abrirá el panel de control de WhatsApp Sender
+4. Se abrirá el panel de control de WhatsAppSender
 
 ### Workflow Básico
 
@@ -236,7 +236,7 @@ Consulta [CONTRIBUTING.md](https://github.com/SystemAlex/WhatsappSender?tab=cont
 
 ## 👨‍💼 Autor
 
-**WhatsApp Sender** fue desarrollado por **[SystemAlex](https://github.com/SystemAlex)**.
+**WhatsAppSender** fue desarrollado por **[SystemAlex](https://github.com/SystemAlex)**.
 
 ### Desarrolladores Contribuidores
 

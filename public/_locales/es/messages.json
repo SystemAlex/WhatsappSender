@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "WhatsAppSender",
+    "description": "Nombre de la aplicación"
+  },
+  "appDescription": {
+    "message": "Puente de automatización para envío secuencial de WhatsApp.",
+    "description": "Descripción de la aplicación"
+  },
+  "appTitle": {
+    "message": "Abrir WhatsAppSender",
+    "description": "Título de la acción"
+  }
+}

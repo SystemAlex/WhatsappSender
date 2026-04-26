@@ -1,6 +1,6 @@
 # Guía de Contribución
 
-¡Gracias por tu interés en contribuir a **WhatsApp Sender**! 🎉
+¡Gracias por tu interés en contribuir a **WhatsAppSender**! 🎉
 
 ## Código de Conducta
 
@@ -182,6 +182,6 @@ Al contribuir, aceptas que tus cambios se licencien bajo la licencia MIT del pro
 
 ---
 
-**¡Gracias por ayudar a mejorar WhatsApp Sender!** 🚀
+**¡Gracias por ayudar a mejorar WhatsAppSender!** 🚀
 
 Última actualización: Abril 2026
