@@ -147,7 +147,7 @@ Esta herramienta debe usarse ÚNICAMENTE para:
 
 ### Para Usuarios Finales
 
-1. Descarga `WhatsappSender.zip` desde [Releases](https://github.com/yourusername/WhatsappSender/releases)
+1. Descarga `WhatsappSender.zip` desde [Releases](https://github.com/SystemAlex/WhatsappSender/releases)
 2. Abre tu navegador basado en Chrome y ve a `chrome://extensions/`
 3. Activa el **"Modo de desarrollador"** en la esquina superior derecha
 4. Arrastra y suelta el archivo `WhatsappSender.zip` en la ventana de extensiones
