@@ -4,6 +4,8 @@ import {
   getAttachmentsDB,
   clearAttachmentsDB,
 } from "@/utils/db";
+import { toast } from "sonner";
+import { SUPPORTED_FILE_TYPES } from "@/lib/utils";
 
 export interface Contact {
   name: string;
@@ -63,6 +65,12 @@ export const useWhatsAppState = () => {
   };
 
   const updateAttachment = async (idx: number, file: File | null) => {
+    if (file && !SUPPORTED_FILE_TYPES.includes(file.type)) {
+      toast.error(
+        `Tipo de archivo no soportado. Formatos permitidos: PNG, JPG, GIF, WEBP, SVG, TXT, HTML, RTF`,
+      );
+      return;
+    }
     const next = [...attachments];
     next[idx] = file;
     setAttachments(next);

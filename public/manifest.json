@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "WhatsAppSender",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Puente de automatización para envío secuencial de WhatsApp.",
   "default_locale": "es",
   "author": "SystemAlex",
@@ -37,14 +37,5 @@
       "js": ["content.js"],
       "run_at": "document_idle"
     }
-  ],
-  "keywords": [
-    "whatsapp",
-    "automatización",
-    "mensajes",
-    "contactos",
-    "envío masivo",
-    "promociones",
-    "comunicación"
   ]
 }

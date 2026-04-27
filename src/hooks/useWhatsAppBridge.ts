@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { toast } from "sonner";
 import { Contact } from "./useWhatsAppState";
+import { SUPPORTED_FILE_TYPES } from "@/lib/utils";
 
 interface ChromeRuntime extends Window {
   chrome?: {
@@ -41,13 +42,13 @@ export const useWhatsAppBridge = (
   const [countdown, setCountdown] = useState(0);
   const [hasExtension, setHasExtension] = useState(false);
   const [isInsideExt, setIsInsideExt] = useState(false);
+  const [nextMessageIndex, setNextMessageIndex] = useState<number>(-1);
 
   const countdownIntervalRef = useRef<ReturnType<typeof setInterval> | null>(
     null,
   );
   const currentIndexRef = useRef<number>(-1);
 
-  // Mantenemos referencias actualizadas para evitar reinicios de efectos
   const phoneListRef = useRef(phoneList);
   const sentIndicesRef = useRef(sentIndices);
   const messagesRef = useRef(messages);
@@ -84,18 +85,30 @@ export const useWhatsAppBridge = (
     setIsAutoMode(false);
     setIsProcessing(false);
     setCountdown(0);
+    setNextMessageIndex(-1);
     if (countdownIntervalRef.current) {
       clearInterval(countdownIntervalRef.current);
       countdownIntervalRef.current = null;
     }
   }, []);
 
-  const copyToClipboard = async (file: File) => {
+  const copyToClipboard = async (file: File): Promise<boolean> => {
     try {
+      const isMimeTypeSupported = SUPPORTED_FILE_TYPES.includes(file.type);
+
+      if (!isMimeTypeSupported) {
+        console.warn(
+          `Tipo de archivo no soportado en portapapeles: ${file.type}. Solo se soportan: ${SUPPORTED_FILE_TYPES.join(", ")}`,
+        );
+        return false;
+      }
+
       const data = [new ClipboardItem({ [file.type]: file })];
       await navigator.clipboard.write(data);
+      return true;
     } catch (err) {
       console.error("Error al copiar archivo:", err);
+      return false;
     }
   };
 
@@ -116,10 +129,23 @@ export const useWhatsAppBridge = (
       currentIndexRef.current = index;
       const rotationIdx = index % currentActiveIndices.length;
       const realMsgIndex = currentActiveIndices[rotationIdx];
-      const currentMsg = messagesRef.current[realMsgIndex];
+      let currentMsg = messagesRef.current[realMsgIndex];
       const currentFile = attachmentsRef.current[realMsgIndex];
 
-      if (currentFile) await copyToClipboard(currentFile);
+      const contact = currentPhones[index];
+      const firstName = contact.name.trim() || "amigo/a";
+      currentMsg = currentMsg.replace(/{{nombre}}/gi, firstName);
+
+      let copySuccess = false;
+      if (currentFile) {
+        copySuccess = await copyToClipboard(currentFile);
+        if (!copySuccess) {
+          const supportedFormats = ["JPG", "PNG", "GIF", "WEBP", "TXT", "HTML"];
+          toast.error(
+            `Tipo de archivo no soportado: ${currentFile.name}. Formatos permitidos: ${supportedFormats.join(", ")}`,
+          );
+        }
+      }
 
       const phone = currentPhones[index].number.replace(/\D/g, "");
       const url = `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(currentMsg)}`;
@@ -127,34 +153,35 @@ export const useWhatsAppBridge = (
       setIsProcessing(true);
 
       const chromeWindow = window as unknown as ChromeRuntime;
+      const chrome = chromeWindow.chrome;
 
-      if (isInsideExt && chromeWindow.chrome?.runtime?.sendMessage) {
-        if (chromeWindow.chrome.storage?.local) {
-          chromeWindow.chrome.storage.local.set(
-            { currentHasAttachment: !!currentFile },
+      if (isInsideExt && chrome?.runtime?.sendMessage) {
+        if (chrome.storage?.local) {
+          chrome.storage.local.set(
+            { currentHasAttachment: copySuccess },
             () => {
-              chromeWindow.chrome.runtime?.sendMessage({
+              chrome.runtime?.sendMessage({
                 type: "OPEN_WHATSAPP",
                 url: url,
-                hasAttachment: !!currentFile,
+                hasAttachment: copySuccess,
               });
             },
           );
         } else {
-          chromeWindow.chrome.runtime.sendMessage({
+          chrome.runtime.sendMessage({
             type: "OPEN_WHATSAPP",
             url: url,
-            hasAttachment: !!currentFile,
+            hasAttachment: copySuccess,
           });
         }
       } else {
         window.postMessage(
-          { type: "WA_SENDER_START_SINGLE", url, hasAttachment: !!currentFile },
+          { type: "WA_SENDER_START_SINGLE", url, hasAttachment: copySuccess },
           "*",
         );
       }
     },
-    [stopAll, isInsideExt], // Dependencias mínimas y estables
+    [stopAll, isInsideExt],
   );
 
   useEffect(() => {
@@ -178,6 +205,11 @@ export const useWhatsAppBridge = (
           }
 
           scrollToItem(nextIdx);
+
+          const rotationIdx = nextIdx % activeMsgIndicesRef.current.length;
+          const realMsgIndex = activeMsgIndicesRef.current[rotationIdx];
+          setNextMessageIndex(realMsgIndex);
+
           let timer = 30;
           setCountdown(timer);
 
@@ -238,5 +270,6 @@ export const useWhatsAppBridge = (
     isInsideExt,
     stopAll,
     sendToWhatsApp,
+    nextMessageIndex,
   };
 };

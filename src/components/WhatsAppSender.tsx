@@ -1,6 +1,12 @@
 "use client";
 
-import React, { useRef, useMemo, useCallback, useState } from "react";
+import React, {
+  useRef,
+  useMemo,
+  useCallback,
+  useState,
+  useEffect,
+} from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -20,6 +26,7 @@ import {
 import { toast } from "sonner";
 import { useWhatsAppState, Contact } from "@/hooks/useWhatsAppState";
 import { useWhatsAppBridge } from "@/hooks/useWhatsAppBridge";
+import { SUPPORTED_FILE_TYPES } from "@/lib/utils";
 import MessageTab from "./MessageTab";
 import ContactList from "./ContactList";
 import ExtensionStatus from "./ExtensionStatus";
@@ -77,6 +84,7 @@ const WhatsAppSender = () => {
     isInsideExt,
     stopAll,
     sendToWhatsApp,
+    nextMessageIndex,
   } = useWhatsAppBridge(
     phoneList,
     sentIndices,
@@ -86,6 +94,12 @@ const WhatsAppSender = () => {
     activeMsgIndices,
     scrollToItem,
   );
+
+  useEffect(() => {
+    if (countdown > 0 && nextMessageIndex !== -1) {
+      setActiveTab(`msg${nextMessageIndex}`);
+    }
+  }, [countdown, nextMessageIndex]);
 
   const canStart =
     hasExtension &&
@@ -324,6 +338,7 @@ const WhatsAppSender = () => {
                       className="hidden"
                       title="Mensaje"
                       aria-label="Mensaje"
+                      accept={SUPPORTED_FILE_TYPES.join(",")}
                       ref={attachmentInputRefs[i]}
                       onChange={(e) =>
                         updateAttachment(i, e.target.files?.[0] || null)
@@ -365,8 +380,8 @@ const WhatsAppSender = () => {
                   {isAutoMode
                     ? isProcessing
                       ? "Procesando..."
-                      : "Parar Envío"
-                    : "Iniciar Envío"}
+                      : "Parar"
+                    : "Iniciar"}
                 </Button>
               </div>
               <input

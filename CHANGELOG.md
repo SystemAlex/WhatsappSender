@@ -2,6 +2,20 @@
 
 Todos los cambios notables a este proyecto se documentarán en este archivo.
 
+## [1.1.1] - 2026-04-27
+
+### Agregado
+
+- Validación estricta de tipos de archivos adjuntos permitidos (`PNG`, `JPG`, `GIF`, `WEBP`, `SVG`, `TXT`, `HTML`, `RTF`).
+- Sincronización visual automática: la pestaña del mensaje activo cambia durante el procesamiento.
+
+### Mejorado
+
+- Guía de uso rápido actualizada con secciones de advertencia y especificaciones de archivos.
+- Interfaz de usuario: etiquetas de botones más concisas ("Iniciar"/"Parar").
+- Limpieza de metadatos en el manifiesto de la extensión.
+- Robustez en el copiado de archivos al portapapeles con validación de MIME types.
+
 ## [1.1.0] - 2026-04-26
 
 ### Agregado
