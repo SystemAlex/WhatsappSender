@@ -1,4 +1,4 @@
-# <img src="icons/WhatsappSender.svg" alt="WhatsAppSender Icon" width="32" height="32"> WhatsAppSender
+# <img src="https://github.com/SystemAlex/WhatsappSender/blob/main/public/icons/icon-128.png" alt="WhatsAppSender Icon" width="32" height="32"> WhatsAppSender
 
 Extensión de navegador para Chrome y navegadores basados en Chromium que facilita la gestión y envío de mensajes por WhatsApp de forma eficiente y controlada.
 
